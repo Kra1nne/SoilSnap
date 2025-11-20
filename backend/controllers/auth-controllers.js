@@ -216,7 +216,7 @@ export const googleLogin = async ( req, res ) => {
         });
         const redirectURL =
             process.env.NODE_ENV === "production"
-                ? "https://soilsnap.up.railway.app/dashboard"
+                ? "https://soilsnap-production.up.railway.app/dashboard"
                 : "http://localhost:5173/dashboard";
 
             res.redirect(redirectURL);

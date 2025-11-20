@@ -88,7 +88,7 @@ export const createUser = async (req, res) => {
     const verificationToken = crypto.randomBytes(32).toString("hex");
     newUser.verificationToken = verificationToken;
 
-    const verifyUrl = `https://soilsnap.up.railway.app/api/users/verify/${verificationToken}`;
+    const verifyUrl = `https://soilsnap-production.up.railway.app/api/users/verify/${verificationToken}`;
 
     const details = {
       from: process.env.SENDGRID_FROM,
@@ -133,7 +133,7 @@ export const verifyUser = async (req, res) => {
     res.status(200).send(`
       <html>
         <head>
-          <meta http-equiv="refresh" content="0;url=https://soilsnap.up.railway.app/signin" />
+          <meta http-equiv="refresh" content="0;url=https://soilsnap-production.up.railway.app/signin" />
         </head>
         <body>
           <p>Verification successful! Redirecting to login page...</p>
