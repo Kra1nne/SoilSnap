@@ -1,0 +1,38 @@
+{
+  "id": "soilsnap.app",
+  "name": "SoilSnap",
+  "short_name": "SoilSnap",
+  "description": "A smart soil analysis and crop recommendation platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e8963a",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "800x800",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "800x800",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/SoilSnapWeb.png",
+      "sizes": "1920x954",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Home Screen"
+    },
+    {
+      "src": "/SoilSnapMobile.png",
+      "sizes": "454x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Soil Classification and Recommendation Screen"
+    }
+  ]
+}
