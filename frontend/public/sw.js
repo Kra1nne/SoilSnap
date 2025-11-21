@@ -110,7 +110,7 @@ self.addEventListener("install", (event) => {
         const db = await idbOpen();
         for (const soil of soils) {
           try {
-            const url = "https://soilsnap-production.up.railway.app/api/crop/recommendation"; // absolute URL
+            const url = "https://soilsnap-production.up.railway.app/api/crop/recommendation"; 
             console.log("SW: fetching recommendation for", soil);
             const res = await fetch(url, {
               method: "POST",
