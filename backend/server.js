@@ -26,7 +26,7 @@ app.set('trust proxy', 1);
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://soilsnap.up.railway.app",
+    "https://soilsnap-production.up.railway.app",
   ],
   credentials: true, // Enable cookies/credentials
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
