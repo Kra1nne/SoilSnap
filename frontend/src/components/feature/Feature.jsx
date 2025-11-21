@@ -8,7 +8,7 @@ export default function Feature() {
   const handleDownload = () => {
     // use Vite env or fallback to public path
     const base = import.meta.env.VITE_API_URL || "";
-    const apkUrl = base ? `${base}/apk/_SoilSnap_19257032.apk` : "/apk/_SoilSnap_19257032.apk";
+    const apkUrl = base ? `${base}/apk/_SoilSnap_19282707` : "/apk/_SoilSnap_19282707";
 
     const link = document.createElement("a");
     link.href = apkUrl;

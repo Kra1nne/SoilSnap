@@ -385,30 +385,45 @@ function Predictor() {
       {/* CROP RECOMMENDATION */}
       {prediction && !error && (
         <div>
-          <h3 className="text-center text-gray-800 mb-5 text-xl font-semibold dark:text-white">
-            Crop Recommendation
-          </h3>
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 p-5 shadow-md gap-6 bg-white dark:bg-gray-900 rounded-2xl">
-            {selectedCrop.map((crop) => (
-              <div className="flex items-center justify-center" key={crop._id}>
-               <div className="relative max-w-lg rounded overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-800">
-                 <span className="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-green-600 text-white">
-                    Highly recommended
-                  </span>
-                  <img className="w-full h-80 object-cover" src={getCropImageUrl(crop)} alt={crop.name} onError={(e) => { e.currentTarget.src = "/fallback-crop.png"; }}/>
-                  <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2 dark:text-white">{crop.name}</div>
-                    <p className="text-gray-700 text-base dark:text-gray-300">
-                      {crop.description?.length > 200
-                        ? crop.description.substring(0, 200) + '...'
-                        : crop.description}
-                    </p>
+        <h3 className="text-center text-gray-800 mb-5 text-xl font-semibold dark:text-white">
+          Crop Recommendation
+        </h3>
+
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 p-5 shadow-md gap-6 bg-white dark:bg-gray-900 rounded-2xl">
+          {selectedCrop.map((crop) => (
+            <div className="flex items-center justify-center" key={crop._id}>
+              <div className="relative w-full h-full flex flex-col rounded overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-800">
+
+                {/* Badge */}
+                <span className="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-green-600 text-white">
+                  Highly recommended
+                </span>
+
+                {/* Image */}
+                <img
+                  className="w-full h-80 object-cover"
+                  src={getCropImageUrl(crop)}
+                  alt={crop.name}
+                  onError={(e) => { e.currentTarget.src = "/fallback-crop.png"; }}
+                />
+
+                {/* Content */}
+                <div className="px-6 py-4 flex flex-col flex-grow">
+                  <div className="font-bold text-xl mb-2 dark:text-white">
+                    {crop.name}
                   </div>
+
+                  {/* Description - full text */}
+                  <p className="text-gray-700 dark:text-gray-300 flex-grow">
+                    {crop.description}
+                  </p>
                 </div>
+
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
       )}
     </>
   );
